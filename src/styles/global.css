@@ -1,3 +1,114 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, dark*));
+
+   :root {
+            --bg: rgb(128, 109, 7);
+            --sh-li ht: rgb(44, 3, 3);
+            --sh-dark: rgb(44, 3, 3);
+           
+            --text:  #010c29;
+            --muted: #010102 ;
+           
+            --accent: #08cc50;
+        }
+        .dark {
+           
+            color-scheme: dark;
+            --bg: #000;
+            --sh-light: #000;
+            --sh-dark: #000;
+            --text: #f5f5f5;
+            --muted: #a3a3a3;
+            --accent: #d4d4d4;
+        }
+
+
+       
+        @layer components {
+            .neu {
+                background: var(--bg);
+                border-radius: 1rem;
+                box-shadow:
+                    8px 8px 18px var(--sh-dark),
+                   -8px -8px 18px var(--sh-light);
+                transition: background-color .4s, color .4s;
+            }
+            .neu-in {
+                background: var(--bg);
+                border-radius: .75rem;
+                box-shadow:
+                    inset 4px 4px 10px var(--sh-dark),
+                    inset -4px -4px 10px var(--sh-light);
+                transition: background-color .4s;
+            }
+            .neu-btn {
+                background: var(--bg);
+                color: var(--text);
+                border-radius: .75rem;
+                box-shadow:
+                    5px 5px 12px var(--sh-dark),
+                   -5px -5px 12px var(--sh-light);
+                transition: all .25s;
+            }
+            .neu-btn:hover { color: var(--accent); }
+            .neu-btn:active {
+                box-shadow:
+                    inset 4px 4px 10px var(--sh-dark),
+                    inset -4px -4px 10px var(--sh-light);
+                transform: translateY(1px);
+            }
+            .neu-accent {
+                background: var(--accent);
+                color: #0b1a0d;
+                border-radius: .75rem;
+                box-shadow:
+                    5px 5px 14px var(--sh-dark),
+                   -5px -5px 14px var(--sh-light);
+                transition: transform .25s;
+            }
+            .neu-accent:hover { transform: translateY(-2px); }
+            .field {
+                background: var(--bg);
+                color: var(--text);
+                border: none;
+                border-radius: .5rem;
+                box-shadow:
+                    inset 4px 4px 10px var(--sh-dark),
+                    inset -4px -4px 10px var(--sh-light);
+                transition: box-shadow .3s;
+            }
+            .field:focus { outline: 2px solid var(--accent); }
+        }
+
+
+     
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+            transition: background-color .4s, color .4s;
+            overflow-x: hidden;
+        }
+        .t-muted { color: var(--muted); }
+        .t-accent { color: var(--accent); }
+        .dark .theme-text { color: var(--text) !important; }
+        .dark .neu-accent {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid #525252;
+        }
+        section { scroll-margin-top: 90px; }
+
+
+       
+        #progressBar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform-origin: left center;
+            transform: scaleX(0);
+            z-index: 60;
+            pointer-events: none;
+        }
