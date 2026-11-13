@@ -1,17 +1,55 @@
 ---
- import BaseLayout from "../layouts/BaseLayout.astro";
- import Hero from "../sections/Hero.astro";
- import About from "../sections/About.astro";
- import Contact from "../sections/Contact.astro";
- import Project from "../sections/Project.astro";
- const name = "John Emmanuel D. Dipol";
- const position = "AI Engineer";
+import "../styles/morphism.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "./index/sections/Hero.astro";
+import About from "./index/sections/About.astro";
+import Contact from "./index/sections/Contact.astro";
+import Project from "./index/sections/Project.astro";
 ---
 
-<BaseLayout>
-<h1 class ="text-red-700">{name} | {position}</h1>
-<Hero />
-<About />
-<Project />
-<Contact />
+<BaseLayout fullPage pageTitle="John Emmanuel Dipol · Morphism">
+  <div class="morphism-site relative min-h-screen overflow-x-hidden bg-blue-300 text-center text-slate-900 dark:bg-slate-900 dark:text-white">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="relative z-10 pt-10">
+      <div id="progressBar" class="fixed left-0 top-0 z-50 h-1 w-full origin-left"></div>
+      <h1 class="text-3xl font-extrabold tracking-tight text-blue-900 drop-shadow-sm dark:text-cyan-400 sm:text-4xl">
+        WOW GA BOUNCE
+      </h1>
+      <button id="toggledark" type="button" class="btn-primary" aria-pressed="false" aria-label="Toggle dark mode">
+        Toggle
+      </button>
+      <button id="Replay" type="button" class="btn-primary">Replay</button>
+    </div>
+
+    <header class="relative z-10 mt-8 px-6 sm:px-10">
+      <nav class="glass-nav mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
+        <span class="font-bold tracking-tight text-blue-900 dark:text-white">emmanuel0925</span>
+        <ul class="flex flex-wrap justify-center gap-6 sm:gap-8">
+          <li><a href="#about" class="font-medium text-yellow-500 transition-colors">About</a></li>
+          <li><a href="#services" class="font-medium text-yellow-500 transition-colors">Services</a></li>
+          <li><a href="#contact" class="font-medium text-yellow-500 transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="physics-wrap" aria-labelledby="physics-title">
+      <div class="physics-panel">
+        <div class="physics-copy">
+          <h2 id="physics-title" class="text-2xl font-bold text-white sm:text-3xl">Pang ta Sir</h2>
+          <span class="physics-badge">Lantawaa</span>
+        </div>
+        <canvas id="physicsCanvas" aria-label="Interactive physics demo"></canvas>
+      </div>
+    </section>
+
+    <div class="relative z-10 m-6 flex flex-col flex-wrap gap-8 p-6 lg:m-10 lg:flex-row lg:p-10">
+      <About />
+      <Project />
+      <Hero />
+      <Contact />
+    </div>
+  </div>
 </BaseLayout>

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, dark*));
+@custom-variant dark (&:where(.dark, .dark *));
 
    :root {
             --bg: rgb(128, 109, 7);
-            --sh-li ht: rgb(44, 3, 3);
+            --sh-light: rgb(44, 3, 3);
             --sh-dark: rgb(44, 3, 3);
            
             --text:  #010c29;
