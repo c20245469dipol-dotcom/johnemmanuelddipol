@@ -64,12 +64,12 @@ gsap.fromTo("#progressBar",
   }
 );
 
-if (document.querySelector("#services")) {
-  ScrollTrigger.create({
-    trigger: "#services",
-    start: "top top",
-    end: "bottom top",
-    pin: true,
-    markers: false,
-  });
-}
+//  if (document.querySelector("#services")) {
+//   ScrollTrigger.create({
+//     trigger: "#services",
+//     start: "top top",
+//     end: "bottom top",
+//     pin: true,
+//     markers: false,
+//   });
+// }
