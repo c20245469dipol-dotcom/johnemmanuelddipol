@@ -25,5 +25,11 @@ const { fullPage = false, pageTitle = `${name} | ${position}` } = Astro.props;
     </main>
     {!fullPage && <Footer />}
     <script src="../script/animation.js"></script>
+    <script>
+            import { FallingLeaves } from "falling-leaves";
+
+            new FallingLeaves({ shapes: ["maple", "oak", "ginkgo", "birch", "oval"] });
+        </script>
   </body>
+  
 </html>
